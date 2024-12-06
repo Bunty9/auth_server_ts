@@ -1,14 +1,14 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
 import { TokenModel } from "../models/token-model";
 import { Document, ObjectId } from "mongoose";
-import { ApiError } from "../exceptions/api-error";
+// import { ApiError } from "../exceptions/api-error";
 import { ResetTokenModel } from "../models/resettoken-model";
 
-interface TokenPayload {
-    _id: string | ObjectId;
-    email: string;
-    verified: boolean;
-}
+// interface TokenPayload {
+//     _id: string | ObjectId;
+//     email: string;
+//     verified: boolean;
+// }
 
 interface Tokens {
     accessToken: string;

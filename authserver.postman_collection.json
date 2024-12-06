@@ -1,0 +1,991 @@
+{
+	"info": {
+		"_postman_id": "2105ba42-7eba-41a9-b443-048e9fd5d67b",
+		"name": "authserver",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23776200"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"bsc0580@gmail.com\",\r\n    \"password\" : \"bipin1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"bsc0580@gmail.com\",\r\n    \"password\" : \"bipin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/login",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjM4MjMsImV4cCI6MTczMzQyNjgyM30.xc_i3PjZVvZw3uavP_30Kh-kcx7Vqrh_sJK9axpvAwg; Path=/; Expires=Thu, 05 Dec 2024 19:27:04 GMT; HttpOnly"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjM4MjMsImV4cCI6MTczNjAxNTgyM30.YQy3KLMA5EP9Kq4VzxxAGiACgbk-iVLeeyXi4YSU8-k; Path=/; Expires=Sat, 04 Jan 2025 18:37:04 GMT; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "839"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"347-GCyppzLrii107kLh597vn+KxQwg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Dec 2024 18:37:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjM4MjMsImV4cCI6MTczMzQyNjgyM30.xc_i3PjZVvZw3uavP_30Kh-kcx7Vqrh_sJK9axpvAwg\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjM4MjMsImV4cCI6MTczNjAxNTgyM30.YQy3KLMA5EP9Kq4VzxxAGiACgbk-iVLeeyXi4YSU8-k\",\n    \"user\": {\n        \"first_name\": \"bipin\",\n        \"last_name\": \"c\",\n        \"email\": \"bsc0580@gmail.com\",\n        \"verified\": false\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\":\"bipin\", \r\n    \"last_name\":\"c\", \r\n    \"email\":\"bsc0580@gmail.com\", \r\n    \"password\":\"bipin123\", \r\n    \"confirmpassword\":\"bipin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/signup",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\":\"bipin\", \r\n    \"last_name\":\"c\", \r\n    \"email\":\"bsc0580@gmail.com\", \r\n    \"password\":\"bipin123\", \r\n    \"confirmpassword\":\"bipin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/signup",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjI3ODYsImV4cCI6MTczMzQyNTc4Nn0.u45QNkIFBD-A18bLBdn4dHyYo8TXMo-rzpYQL5UfMSE; Path=/; Expires=Thu, 05 Dec 2024 19:09:46 GMT; HttpOnly"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjI3ODYsImV4cCI6MTczNjAxNDc4Nn0.nn3uID6Bcsk1JE2cAJB_li2QWYV2ubRDnPIU78fDVtc; Path=/; Expires=Sat, 04 Jan 2025 18:19:46 GMT; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "839"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"347-hVj8LybBw1sVjKHxmpC0ptMj6z0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 05 Dec 2024 18:19:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjI3ODYsImV4cCI6MTczMzQyNTc4Nn0.u45QNkIFBD-A18bLBdn4dHyYo8TXMo-rzpYQL5UfMSE\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjI3ODYsImV4cCI6MTczNjAxNDc4Nn0.nn3uID6Bcsk1JE2cAJB_li2QWYV2ubRDnPIU78fDVtc\",\n    \"user\": {\n        \"first_name\": \"bipin\",\n        \"last_name\": \"c\",\n        \"email\": \"bsc0580@gmail.com\",\n        \"verified\": false\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/logout",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send verify email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/sendlink",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"sendlink"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "verify acc Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/sendlink",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"sendlink"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-EWohXQFyVHqO0wBfTeyK2T/kF8k\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2024 10:42:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Verification link sent to user email.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "logout Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/refresh",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:3000"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0NzY0MTQsImV4cCI6MTczNjA2ODQxNH0.BmBFn0NUS5L-1H0Zrm_gdUMCMqUiR_KRj9I_JjdEpc4; Max-Age=2592000; Path=/; Expires=Sun, 05 Jan 2025 09:13:34 GMT; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "928"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a0-6BmUYB3761pc1C7JQ9A8e1nQOcE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2024 09:13:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0NzY0MTQsImV4cCI6MTczMzQ3OTQxNH0.oKw2cDmpIzCyz0pNFLJbkYf0Jw7znEZg1S59b-fgLkM\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0NzY0MTQsImV4cCI6MTczNjA2ODQxNH0.BmBFn0NUS5L-1H0Zrm_gdUMCMqUiR_KRj9I_JjdEpc4\",\n    \"user\": {\n        \"_id\": \"6751eebf994e0c32cf20d3fa\",\n        \"first_name\": \"bipin\",\n        \"last_name\": \"c\",\n        \"email\": \"bsc0580@gmail.com\",\n        \"verified\": false,\n        \"activationLink\": \"a7f68b9c-f424-4e8b-92f1-63fdad80b0cb\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "verify acc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/verify?link=0265b050-df98-41e3-9d7a-a609b6e95186",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"verify"
+							],
+							"query": [
+								{
+									"key": "link",
+									"value": "0265b050-df98-41e3-9d7a-a609b6e95186"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "activate acc",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/verify?link=0265b050-df98-41e3-9d7a-a609b6e95186",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"verify"
+									],
+									"query": [
+										{
+											"key": "link",
+											"value": "0265b050-df98-41e3-9d7a-a609b6e95186"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-qQI6zGrSNry44O4g1gm1a+NFGgQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2024 11:07:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Verification Successsful. You may leave this page now.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/resetpassword/0265b050-df98-41e3-9d7a-a609b6e95186",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"resetpassword",
+								"0265b050-df98-41e3-9d7a-a609b6e95186"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/resetpassword/0265b050-df98-41e3-9d7a-a609b6e95186",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"resetpassword",
+								"0265b050-df98-41e3-9d7a-a609b6e95186"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "reset password Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://6639-152-58-31-202.ngrok-free.app/api/auth/resetpassword/48679a0f-d751-4924-afc2-133c66aa66b8",
+									"protocol": "https",
+									"host": [
+										"6639-152-58-31-202",
+										"ngrok-free",
+										"app"
+									],
+									"path": [
+										"api",
+										"auth",
+										"resetpassword",
+										"48679a0f-d751-4924-afc2-133c66aa66b8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53432"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2024 16:46:19 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"d0b8-HdVEQm024UugATtrOJINfIll6dU\""
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "152.58.31.202"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html\n    PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\"\n    xmlns:o=\"urn:schemas-microsoft-com:office:office\" lang=\"en\">\n    <head>\n        <title></title>\n        <meta charset=\"UTF-8\" />\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n        <!--[if !mso]>-->\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n        <!--\n        <![endif]-->\n        <meta name=\"x-apple-disable-message-reformatting\" content=\"\" />\n        <meta content=\"target-densitydpi=device-dpi\" name=\"viewport\" />\n        <meta content=\"true\" name=\"HandheldFriendly\" />\n        <meta content=\"width=device-width\" name=\"viewport\" />\n        <meta name=\"format-detection\" content=\"telephone=no, date=no, address=no, email=no, url=no\" />\n        <style type=\"text/css\">\n        table {\n            border-collapse: separate;\n            table-layout: fixed;\n            mso-table-lspace: 0pt;\n            mso-table-rspace: 0pt\n        }\n\n        table td {\n            border-collapse: collapse\n        }\n\n        .ExternalClass {\n            width: 100%\n        }\n\n        .ExternalClass,\n        .ExternalClass p,\n        .ExternalClass span,\n        .ExternalClass font,\n        .ExternalClass td,\n        .ExternalClass div {\n            line-height: 100%\n        }\n\n        body,\n        a,\n        li,\n        p,\n        h1,\n        h2,\n        h3 {\n            -ms-text-size-adjust: 100%;\n            -webkit-text-size-adjust: 100%;\n        }\n\n        html {\n            -webkit-text-size-adjust: none !important\n        }\n\n        body,\n        #innerTable {\n            -webkit-font-smoothing: antialiased;\n            -moz-osx-font-smoothing: grayscale\n        }\n\n        #innerTable img+div {\n            display: none;\n            display: none !important\n        }\n\n        img {\n            Margin: 0;\n            padding: 0;\n            -ms-interpolation-mode: bicubic\n        }\n\n        h1,\n        h2,\n        h3,\n        p,\n        a {\n            line-height: inherit;\n            overflow-wrap: normal;\n            white-space: normal;\n            word-break: break-word\n        }\n\n        a {\n            text-decoration: none\n        }\n\n        h1,\n        h2,\n        h3,\n        p {\n            min-width: 100% !important;\n            width: 100% !important;\n            max-width: 100% !important;\n            display: inline-block !important;\n            border: 0;\n            padding: 0;\n            margin: 0\n        }\n\n        a[x-apple-data-detectors] {\n            color: inherit !important;\n            text-decoration: none !important;\n            font-size: inherit !important;\n            font-family: inherit !important;\n            font-weight: inherit !important;\n            line-height: inherit !important\n        }\n\n        u+#body a {\n            color: inherit;\n            text-decoration: none;\n            font-size: inherit;\n            font-family: inherit;\n            font-weight: inherit;\n            line-height: inherit;\n        }\n\n        a[href^=\"mailto\"],\n        a[href^=\"tel\"],\n        a[href^=\"sms\"] {\n            color: inherit;\n            text-decoration: none\n        }\n    </style>\n        <style type=\"text/css\">\n        @media (min-width: 481px) {\n            .hd {\n                display: none !important\n            }\n        }\n    </style>\n        <style type=\"text/css\">\n        @media (max-width: 480px) {\n            .hm {\n                display: none !important\n            }\n        }\n    </style>\n        <style type=\"text/css\">\n        @media (max-width: 480px) {\n            .t26 {\n                mso-line-height-alt: 0px !important;\n                line-height: 0 !important;\n                display: none !important\n            }\n\n            .t27 {\n                padding-left: 30px !important;\n                padding-bottom: 40px !important;\n                padding-right: 30px !important\n            }\n\n            .t29,\n            .t82 {\n                width: 480px !important\n            }\n\n            .t24 {\n                width: 353px !important\n            }\n\n            .t7 {\n                padding-bottom: 20px !important\n            }\n\n            .t14,\n            .t19,\n            .t34,\n            .t72,\n            .t78,\n            .t9 {\n                width: 420px !important\n            }\n\n            .t6 {\n                line-height: 28px !important;\n                font-size: 26px !important;\n                letter-spacing: -1.04px !important\n            }\n\n            .t80 {\n                padding: 40px 30px !important\n            }\n\n            .t70 {\n                padding-bottom: 36px !important\n            }\n\n            .t66 {\n                text-align: center !important\n            }\n\n            .t37,\n            .t39,\n            .t43,\n            .t45,\n            .t49,\n            .t51,\n            .t55,\n            .t57,\n            .t61,\n            .t63 {\n                display: revert !important\n            }\n\n            .t41,\n            .t47,\n            .t53,\n            .t59,\n            .t65 {\n                vertical-align: top !important;\n                width: 44px !important\n            }\n\n            .t17 {\n                padding-bottom: 34px !important\n            }\n\n            .t1 {\n                padding-bottom: 50px !important\n            }\n\n            .t3 {\n                width: 80px !important\n            }\n        }\n    </style>\n        <!--[if !mso]>-->\n        <link href=\"https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;800&amp;display=swap\" rel=\"stylesheet\"\n        type=\"text/css\" />\n        <!--\n        <![endif]-->\n        <!--[if mso]>\n        <xml>\n            <o:OfficeDocumentSettings>\n                <o:AllowPNG/>\n                <o:PixelsPerInch>96</o:PixelsPerInch>\n            </o:OfficeDocumentSettings>\n        </xml>\n        <![endif]-->\n    </head>\n    <body id=\"body\" class=\"t86\" style=\"min-width:100%;Margin:0px;padding:0px;background-color:#0D0C0C;\">\n        <div class=\"t85\" style=\"background-color:#0D0C0C;\">\n            <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\">\n                <tr>\n                    <td class=\"t84\" style=\"font-size:0;line-height:0;mso-line-height-rule:exactly;background-color:#0D0C0C;\"\n                    valign=\"top\" align=\"center\">\n                        <!--[if mso]>\n                        <v:background xmlns:v=\"urn:schemas-microsoft-com:vml\" fill=\"true\" stroke=\"false\">\n                            <v:fill color=\"#0D0C0C\"/>\n                        </v:background>\n                        <![endif]-->\n                        <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\"\n                        id=\"innerTable\">\n                            <tr>\n                                <td>\n                                    <div class=\"t26\"\n                                    style=\"mso-line-height-rule:exactly;mso-line-height-alt:45px;line-height:45px;font-size:1px;display:block;\">\n                                    &nbsp;&nbsp;</div>\n                                </td>\n                            </tr>\n                            <tr>\n                                <td align=\"center\">\n                                    <table class=\"t30\" role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\"\n                                    style=\"Margin-left:auto;Margin-right:auto;\">\n                                        <tr>\n                                            <!--[if mso]>\n                                            <td width=\"600\" class=\"t29\" style=\"background-color:#333333;overflow:hidden;width:600px;border-radius:15px 15px 0 0;\">\n                                                <![endif]-->\n                                                <!--[if !mso]>-->\n                                                <td class=\"t29\"\n                                            style=\"background-color:#333333;overflow:hidden;width:600px;border-radius:15px 15px 0 0;\">\n                                                    <!--\n                                                    <![endif]-->\n                                                    <table class=\"t28\" role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\"\n                                                width=\"100%\" style=\"width:100%;\">\n                                                        <tr>\n                                                            <td class=\"t27\" style=\"padding:0 50px 60px 50px;\">\n                                                                <table role=\"presentation\" width=\"100%\" cellpadding=\"0\"\n                                                            cellspacing=\"0\" style=\"width:100% !important;\">\n                                                                    <tr>\n                                                                        <td align=\"left\">\n                                                                            <table class=\"t4\" role=\"presentation\"\n                                                                        cellpadding=\"0\" cellspacing=\"0\"\n                                                                        style=\"Margin-right:auto;\">\n                                                                                <tr>\n                                                                                    <!--[if mso]>\n                                                                                    <td width=\"110\" class=\"t3\" style=\"background-color:#000000;overflow:hidden;width:110px;border-radius:0 0 5px 5px;\">\n                                                                                        <![endif]-->\n                                                                                        <!--[if !mso]>-->\n                                                                                        <td class=\"t3\"\n                                                                                style=\"background-color:#000000;overflow:hidden;width:110px;border-radius:0 0 5px 5px;\">\n                                                                                            <!--\n                                                                                            <![endif]-->\n                                                                                            <table class=\"t2\" role=\"presentation\"\n                                                                                    cellpadding=\"0\" cellspacing=\"0\"\n                                                                                    width=\"100%\" style=\"width:100%;\">\n                                                                                                <tr>\n                                                                                                    <td class=\"t1\"\n                                                                                            style=\"padding:15px 15px 60px 15px;\">\n                                                                                                        <div style=\"font-size:0px;\">\n                                                                                                            <img class=\"t0\"\n                                                                                                    style=\"display:block;border:0;height:auto;width:100%;Margin:0;max-width:100%;\"\n                                                                                                    width=\"80\"\n                                                                                                    height=\"80\" alt=\"\"\n                                                                                                    src=\"/images/6.png\" />\n                                                                                                        </div>\n                                                                                                    </td>\n                                                                                                </tr>\n                                                                                            </table>\n                                                                                        </td>\n                                                                                    </tr>\n                                                                                </table>\n                                                                            </td>\n                                                                        </tr>\n                                                                        <tr>\n                                                                            <td>\n                                                                                <div class=\"t5\"\n                                                                        style=\"mso-line-height-rule:exactly;mso-line-height-alt:20px;line-height:20px;font-size:1px;display:block;\">\n                                                                        &nbsp;&nbsp;</div>\n                                                                            </td>\n                                                                        </tr>\n                                                                        <tr>\n                                                                            <td align=\"center\" style=\"padding: 50px 0;\">\n                                                                                <form action=\"/api/auth/changepassword/48679a0f-d751-4924-afc2-133c66aa66b8\" method=\"POST\" style=\"max-width: 500px; margin: 0 auto; text-align: center;\">\n                                                                                    <!-- New Password Text -->\n                                                                                    <h1 style=\"font-family: Albert Sans, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif; \n                                                                            color: #F8F8F8; margin-bottom: 60px; font-size: 34px; font-weight: 600;\">\n                                                                            Create New Password\n                                                                        </h1>\n                                                                                    <!-- Input Fields -->\n                                                                                    <div style=\"margin-bottom: 20px;\">\n                                                                                        <input class=\"t11\" type=\"password\" name=\"newpassword\"\n                                                                                placeholder=\"Enter new password\" required\n                                                                                style=\"width: 100%; max-width: 400px; padding: 10px; font-family: Albert Sans, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif; \n                                                                                font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 0 auto; display: block;\">\n                                                                        \n                                                                                    </div>\n                                                                                    <div style=\"margin-bottom: 20px;\">\n                                                                                        <input class=\"t11\" type=\"password\" name=\"confirmpassword\"\n                                                                                placeholder=\"Confirm new password\" required\n                                                                                style=\"width: 100%; max-width: 400px; padding: 10px; font-family: Albert Sans, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif; \n                                                                                font-size: 16px; border: 1px solid #ccc; border-radius: 5px; margin: 0 auto; display: block;\">\n                                                                        \n                                                                                    </div>\n                                                                                    <!-- Submit Button -->\n                                                                                    <button type=\"submit\" class=\"t21\"\n                                                                            style=\"background-color: #181818; color: #F8F8F8; border: none; border-radius: 44px; \n                                                                            padding: 15px 30px; font-family: Albert Sans, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif; \n                                                                            font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer; \n                                                                            line-height: 1.2; display: inline-block;\">\n                                                                            Change Password\n                                                                        </button>\n                                                                                </form>\n                                                                            </td>\n                                                                        </tr>\n                                                                    </table>\n                                                                </td>\n                                                            </tr>\n                                                        </table>\n                                                    </td>\n                                                </tr>\n                                            </table>\n                                        </td>\n                                    </tr>\n                                    <tr>\n                                        <td justify=\"center\">\n                                            <table class=\"t83\" role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\"\n                                    style=\"Margin-left:auto;Margin-right:auto;\">\n                                                <tr>\n                                                    <!--[if mso]>\n                                                    <td width=\"600\" class=\"t82\" style=\"background-color:#333333;width:600px;\">\n                                                        <![endif]-->\n                                                        <!--[if !mso]>-->\n                                                        <td class=\"t82\" style=\"background-color:#333333;width:600px;\">\n                                                            <!--\n                                                            <![endif]-->\n                                                            <table class=\"t81\" role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\"\n                                                width=\"100%\" style=\"width:100%;\">\n                                                                <tr>\n                                                                    <td class=\"t80\" style=\"padding:48px 50px 48px 50px;\">\n                                                                        <table role=\"presentation\" width=\"100%\" cellpadding=\"0\"\n                                                            cellspacing=\"0\" style=\"width:100% !important;\">\n                                                                            <tr>\n                                                                                <td justify=\"center\">\n                                                                                    <table class=\"t35\" role=\"presentation\"\n                                                                        cellpadding=\"0\" cellspacing=\"0\"\n                                                                        style=\"Margin-left:auto;Margin-right:auto;\">\n                                                                                        <tr>\n                                                                                            <!--[if mso]>\n                                                                                            <td width=\"500\" class=\"t34\" style=\"width:500px;\">\n                                                                                                <![endif]-->\n                                                                                                <!--[if !mso]>-->\n                                                                                                <td class=\"t34\" style=\"width:500px;\">\n                                                                                                    <!--\n                                                                                                    <![endif]-->\n                                                                                                    <table class=\"t33\" role=\"presentation\"\n                                                                                    cellpadding=\"0\" cellspacing=\"0\"\n                                                                                    width=\"100%\" style=\"width:100%;\">\n                                                                                                        <tr>\n                                                                                                            <td class=\"t32\">\n                                                                                                                <p class=\"t31\"\n                                                                                                style=\"margin:0;Margin:0;font-family:Albert Sans,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;line-height:22px;font-weight:600;font-style:normal;font-size:18px;text-decoration:none;text-transform:none;letter-spacing:-0.9px;direction:ltr;color:#C4C4C4;text-align:center;mso-line-height-rule:exactly;mso-text-raise:1px;\">\n                                                                                                Want updates through\n                                                                                                more platforms?</p>\n                                                                                                            </td>\n                                                                                                        </tr>\n                                                                                                    </table>\n                                                                                                </td>\n                                                                                            </tr>\n                                                                                        </table>\n                                                                                    </td>\n                                                                                </tr>\n                                                                                <tr>\n                                                                                    <td justify=\"center\">\n                                                                                        <table class=\"t73\" role=\"presentation\"\n                                                                        cellpadding=\"0\" cellspacing=\"0\"\n                                                                        style=\"Margin-left:auto;Margin-right:auto;\">\n                                                                                            <tr>\n                                                                                                <!--[if mso]>\n                                                                                                <td width=\"500\" class=\"t72\" style=\"background-color:#333333;width:500px;\">\n                                                                                                    <![endif]-->\n                                                                                                    <!--[if !mso]>-->\n                                                                                                    <td class=\"t72\"\n                                                                                style=\"background-color:#333333;width:500px;\">\n                                                                                                        <!--\n                                                                                                        <![endif]-->\n                                                                                                        <table class=\"t71\" role=\"presentation\"\n                                                                                    cellpadding=\"0\" cellspacing=\"0\"\n                                                                                    width=\"100%\" style=\"width:100%;\">\n                                                                                                            <tr>\n                                                                                                                <td class=\"t70\"\n                                                                                            style=\"padding:10px 0 44px 0;\">\n                                                                                                                    <div class=\"t69\"\n                                                                                                style=\"width:100%;text-align:center;\">\n                                                                                                                        <div class=\"t68\"\n                                                                                                    style=\"display:inline-block;\">\n                                                                                                                            <table class=\"t67\"\n                                                                                                        role=\"presentation\"\n                                                                                                        cellpadding=\"0\"\n                                                                                                        cellspacing=\"0\"\n                                                                                                        jusitfy=\"center\"\n                                                                                                        valign=\"top\">\n                                                                                                                                <tr class=\"t66\">\n                                                                                                                                    <td></td>\n                                                                                                                                    <td class=\"t41\"\n                                                                                                                width=\"44\"\n                                                                                                                valign=\"top\">\n                                                                                                                                        <table\n                                                                                                                    role=\"presentation\"\n                                                                                                                    width=\"100%\"\n                                                                                                                    cellpadding=\"0\"\n                                                                                                                    cellspacing=\"0\"\n                                                                                                                    class=\"t40\"\n                                                                                                                    style=\"width:100%;\">\n                                                                                                                                            <tr>\n                                                                                                                                                <td class=\"t37\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                                <td\n                                                                                                                            class=\"t38\">\n                                                                                                                                                    <a href=\"https://www.linkedin.com/in/bipin-s-c/\"\n                                                                                                                                style=\"font-size:0px;\"\n                                                                                                                                target=\"_blank\">\n                                                                                                                                                        <img\n                                                                                                                                    class=\"t36\"\n                                                                                                                                    style=\"display:block;border:0;height:auto;width:100%;Margin:0;max-width:100%;\"\n                                                                                                                                    width=\"24\"\n                                                                                                                                    height=\"24\"\n                                                                                                                                    alt=\"\"\n                                                                                                                                    src=\"/images/1.png\" />\n                                                                                                                                                    </a>\n                                                                                                                                                </td>\n                                                                                                                                                <td class=\"t39\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                            </tr>\n                                                                                                                                        </table>\n                                                                                                                                    </td>\n                                                                                                                                    <td class=\"t47\"\n                                                                                                                width=\"44\"\n                                                                                                                valign=\"top\">\n                                                                                                                                        <table\n                                                                                                                    role=\"presentation\"\n                                                                                                                    width=\"100%\"\n                                                                                                                    cellpadding=\"0\"\n                                                                                                                    cellspacing=\"0\"\n                                                                                                                    class=\"t46\"\n                                                                                                                    style=\"width:100%;\">\n                                                                                                                                            <tr>\n                                                                                                                                                <td class=\"t43\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                                <td\n                                                                                                                            class=\"t44\">\n                                                                                                                                                    <a href=\"https://bookish-dollop.vercel.app/\"\n                                                                                                                                style=\"font-size:0px;\"\n                                                                                                                                target=\"_blank\">\n                                                                                                                                                        <img\n                                                                                                                                    class=\"t42\"\n                                                                                                                                    style=\"display:block;border:0;height:auto;width:100%;Margin:0;max-width:100%;\"\n                                                                                                                                    width=\"24\"\n                                                                                                                                    height=\"24\"\n                                                                                                                                    alt=\"\"\n                                                                                                                                    src=\"/images/5.png\" />\n                                                                                                                                                    </a>\n                                                                                                                                                </td>\n                                                                                                                                                <td class=\"t45\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                            </tr>\n                                                                                                                                        </table>\n                                                                                                                                    </td>\n                                                                                                                                    <td class=\"t53\"\n                                                                                                                width=\"44\"\n                                                                                                                valign=\"top\">\n                                                                                                                                        <table\n                                                                                                                    role=\"presentation\"\n                                                                                                                    width=\"100%\"\n                                                                                                                    cellpadding=\"0\"\n                                                                                                                    cellspacing=\"0\"\n                                                                                                                    class=\"t52\"\n                                                                                                                    style=\"width:100%;\">\n                                                                                                                                            <tr>\n                                                                                                                                                <td class=\"t49\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                                <td\n                                                                                                                            class=\"t50\">\n                                                                                                                                                    <a href=\"https://github.com/Bunty9\"\n                                                                                                                                style=\"font-size:0px;\"\n                                                                                                                                target=\"_blank\">\n                                                                                                                                                        <img\n                                                                                                                                    class=\"t48\"\n                                                                                                                                    style=\"display:block;border:0;height:auto;width:100%;Margin:0;max-width:100%;\"\n                                                                                                                                    width=\"24\"\n                                                                                                                                    height=\"24\"\n                                                                                                                                    alt=\"\"\n                                                                                                                                    src=\"/images/4.png\" />\n                                                                                                                                                    </a>\n                                                                                                                                                </td>\n                                                                                                                                                <td class=\"t51\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                            </tr>\n                                                                                                                                        </table>\n                                                                                                                                    </td>\n                                                                                                                                    <td class=\"t59\"\n                                                                                                                width=\"44\"\n                                                                                                                valign=\"top\">\n                                                                                                                                        <table\n                                                                                                                    role=\"presentation\"\n                                                                                                                    width=\"100%\"\n                                                                                                                    cellpadding=\"0\"\n                                                                                                                    cellspacing=\"0\"\n                                                                                                                    class=\"t58\"\n                                                                                                                    style=\"width:100%;\">\n                                                                                                                                            <tr>\n                                                                                                                                                <td class=\"t55\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                                <td\n                                                                                                                            class=\"t56\">\n                                                                                                                                                    <a href=\"mailto:cbipin2000@gmail.com\"\n                                                                                                                                style=\"font-size:0px;\"\n                                                                                                                                target=\"_blank\">\n                                                                                                                                                        <img\n                                                                                                                                    class=\"t54\"\n                                                                                                                                    style=\"display:block;border:0;height:auto;width:100%;Margin:0;max-width:100%;\"\n                                                                                                                                    width=\"24\"\n                                                                                                                                    height=\"24\"\n                                                                                                                                    alt=\"\"\n                                                                                                                                    src=\"/images/3.png\" />\n                                                                                                                                                    </a>\n                                                                                                                                                </td>\n                                                                                                                                                <td class=\"t57\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                            </tr>\n                                                                                                                                        </table>\n                                                                                                                                    </td>\n                                                                                                                                    <td class=\"t65\"\n                                                                                                                width=\"44\"\n                                                                                                                valign=\"top\">\n                                                                                                                                        <table\n                                                                                                                    role=\"presentation\"\n                                                                                                                    width=\"100%\"\n                                                                                                                    cellpadding=\"0\"\n                                                                                                                    cellspacing=\"0\"\n                                                                                                                    class=\"t64\"\n                                                                                                                    style=\"width:100%;\">\n                                                                                                                                            <tr>\n                                                                                                                                                <td class=\"t61\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                                <td\n                                                                                                                            class=\"t62\">\n                                                                                                                                                    <a href=\"https://www.instagram.com/blxxdblxxm\"\n                                                                                                                                style=\"font-size:0px;\"\n                                                                                                                                target=\"_blank\">\n                                                                                                                                                        <img\n                                                                                                                                    class=\"t60\"\n                                                                                                                                    style=\"display:block;border:0;height:auto;width:100%;Margin:0;max-width:100%;\"\n                                                                                                                                    width=\"24\"\n                                                                                                                                    height=\"24\"\n                                                                                                                                    alt=\"\"\n                                                                                                                                    src=\"/images/2.png\" />\n                                                                                                                                                    </a>\n                                                                                                                                                </td>\n                                                                                                                                                <td class=\"t63\"\n                                                                                                                            style=\"width:10px;\"\n                                                                                                                            width=\"10\">\n                                                                                                                        </td>\n                                                                                                                                            </tr>\n                                                                                                                                        </table>\n                                                                                                                                    </td>\n                                                                                                                                    <td></td>\n                                                                                                                                </tr>\n                                                                                                                            </table>\n                                                                                                                        </div>\n                                                                                                                    </div>\n                                                                                                                </td>\n                                                                                                            </tr>\n                                                                                                        </table>\n                                                                                                    </td>\n                                                                                                </tr>\n                                                                                            </table>\n                                                                                        </td>\n                                                                                    </tr>\n                                                                                    <tr>\n                                                                                        <td justify=\"center\">\n                                                                                            <table class=\"t79\" role=\"presentation\"\n                                                                        cellpadding=\"0\" cellspacing=\"0\"\n                                                                        style=\"Margin-left:auto;Margin-right:auto;\">\n                                                                                                <tr>\n                                                                                                    <!--[if mso]>\n                                                                                                    <td width=\"500\" class=\"t78\" style=\"width:500px;\">\n                                                                                                        <![endif]-->\n                                                                                                        <!--[if !mso]>-->\n                                                                                                        <td class=\"t78\" style=\"width:500px;\">\n                                                                                                            <!--\n                                                                                                            <![endif]-->\n                                                                                                            <table class=\"t77\" role=\"presentation\"\n                                                                                    cellpadding=\"0\" cellspacing=\"0\"\n                                                                                    width=\"100%\" style=\"width:100%;\">\n                                                                                                                <tr>\n                                                                                                                    <td class=\"t76\">\n                                                                                                                        <p class=\"t75\"\n                                                                                                style=\"margin:0;Margin:0;font-family:Albert Sans,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;line-height:22px;font-weight:400;font-style:normal;font-size:12px;text-decoration:none;text-transform:none;direction:ltr;color:#ABABAB;text-align:center;mso-line-height-rule:exactly;mso-text-raise:3px;\">\n                                                                                                made with ❤️ by \n                                                                                                                            <a\n                                                                                                    class=\"t74\"\n                                                                                                    href=\"https://github.com/Bunty9\"\n                                                                                                    style=\"margin:0;Margin:0;font-weight:400;font-style:normal;text-decoration:none;direction:ltr;color:#ABABAB;mso-line-height-rule:exactly;\"\n                                                                                                    target=\"_blank\">Bunty9</a>\n                                                                                                                        </p>\n                                                                                                                    </td>\n                                                                                                                </tr>\n                                                                                                            </table>\n                                                                                                        </td>\n                                                                                                    </tr>\n                                                                                                </table>\n                                                                                            </td>\n                                                                                        </tr>\n                                                                                    </table>\n                                                                                </td>\n                                                                            </tr>\n                                                                        </table>\n                                                                    </td>\n                                                                </tr>\n                                                            </table>\n                                                        </td>\n                                                    </tr>\n                                                </table>\n                                            </td>\n                                        </tr>\n                                    </table>\n                                </div>\n                                <div class=\"gmail-fix\" style=\"display: none; white-space: nowrap; font: 15px courier; line-height: 0;\">&nbsp; &nbsp;\n        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\n        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>\n                            </body>\n                        </html>"
+						}
+					]
+				},
+				{
+					"name": "forgotpasswrod",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"bsc0580@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/auth/forgotpassword",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"forgotpassword"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "forgotpasswrod",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"bsc0580@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/api/auth/forgotpassword",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"forgotpassword"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-7fQCDZavCPbifeAXHZlS8zHol/Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2024 16:44:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"An email with the link to change your password has been sent.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newpassword\":\"bipin1234\",\r\n    \"confirmpassword\":\"bipin1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://6639-152-58-31-202.ngrok-free.app/api/auth/changepassword/48679a0f-d751-4924-afc2-133c66aa66b8",
+							"protocol": "https",
+							"host": [
+								"6639-152-58-31-202",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"api",
+								"auth",
+								"changepassword",
+								"48679a0f-d751-4924-afc2-133c66aa66b8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "changepassword",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"newpassword\":\"bipin1234\",\r\n    \"confirmpassword\":\"bipin1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://6639-152-58-31-202.ngrok-free.app/api/auth/changepassword/48679a0f-d751-4924-afc2-133c66aa66b8",
+									"protocol": "https",
+									"host": [
+										"6639-152-58-31-202",
+										"ngrok-free",
+										"app"
+									],
+									"path": [
+										"api",
+										"auth",
+										"changepassword",
+										"48679a0f-d751-4924-afc2-133c66aa66b8"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "685"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'none'"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2024 16:48:33 GMT"
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "152.58.31.202"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>Error: Invalid Reset Token\n            <br> &nbsp; &nbsp;at Function.BadRequest (S:\\code\\personal\\joining_branmap\\projects\\auth_server\\src\\exceptions\\api-error.ts:17:16)\n            <br> &nbsp; &nbsp;at AuthService.&lt;anonymous&gt; (S:\\code\\personal\\joining_branmap\\projects\\auth_server\\src\\service\\auth-service.ts:154:28)\n            <br> &nbsp; &nbsp;at Generator.next (&lt;anonymous&gt;)\n            <br> &nbsp; &nbsp;at fulfilled (S:\\code\\personal\\joining_branmap\\projects\\auth_server\\src\\service\\auth-service.ts:5:58)\n            <br> &nbsp; &nbsp;at processTicksAndRejections (node:internal/process/task_queues:95:5)\n        </pre>\n    </body>\n</html>"
+						},
+						{
+							"name": "change password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"newpassword\":\"bipin1234\",\r\n    \"confirmpassword\":\"bipin1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://6639-152-58-31-202.ngrok-free.app/api/auth/changepassword/cc5238d4-a9b3-4186-8d23-98d60af17b39",
+									"protocol": "https",
+									"host": [
+										"6639-152-58-31-202",
+										"ngrok-free",
+										"app"
+									],
+									"path": [
+										"api",
+										"auth",
+										"changepassword",
+										"cc5238d4-a9b3-4186-8d23-98d60af17b39"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1074"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 06 Dec 2024 16:51:12 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"432-QXOAD6qAdsOALH+Ev3q82JyQEI8\""
+								},
+								{
+									"key": "Ngrok-Agent-Ips",
+									"value": "152.58.31.202"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password changed successfully\",\n    \"changed\": {\n        \"$__\": {\n            \"activePaths\": {\n                \"paths\": {\n                    \"verified\": \"require\",\n                    \"email\": \"require\",\n                    \"last_name\": \"require\",\n                    \"first_name\": \"require\",\n                    \"_id\": \"init\",\n                    \"activation_link\": \"init\",\n                    \"__v\": \"init\",\n                    \"password\": \"require\"\n                },\n                \"states\": {\n                    \"require\": {\n                        \"verified\": true,\n                        \"password\": true,\n                        \"email\": true,\n                        \"last_name\": true,\n                        \"first_name\": true\n                    },\n                    \"default\": {},\n                    \"init\": {\n                        \"_id\": true,\n                        \"activation_link\": true,\n                        \"__v\": true\n                    },\n                    \"modify\": {}\n                }\n            },\n            \"skipId\": true,\n            \"op\": null,\n            \"saving\": null,\n            \"$versionError\": null,\n            \"saveOptions\": null,\n            \"validating\": null,\n            \"cachedRequired\": {},\n            \"inserting\": false,\n            \"modifiedPaths\": [\n                \"password\"\n            ],\n            \"backup\": {\n                \"activePaths\": {\n                    \"modify\": {\n                        \"password\": true\n                    },\n                    \"default\": {}\n                },\n                \"validationError\": null\n            },\n            \"savedState\": {}\n        },\n        \"$isNew\": false,\n        \"_doc\": {\n            \"_id\": \"6751eebf994e0c32cf20d3fa\",\n            \"first_name\": \"bipin\",\n            \"last_name\": \"c\",\n            \"email\": \"bsc0580@gmail.com\",\n            \"password\": \"$2b$10$VZp2gXNl29if4Tga7qC5Ge2rr2Zeko4IMiwTioaRFbj/xUaAntHQe\",\n            \"verified\": true,\n            \"activation_link\": \"565fa801-6b14-4ef8-8672-e431953680bd\",\n            \"__v\": 0\n        },\n        \"deleteToken\": {\n            \"acknowledged\": true,\n            \"deletedCount\": 1\n        },\n        \"logout\": {\n            \"acknowledged\": true,\n            \"deletedCount\": 0\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "serveractivity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/public/home",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"home"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/images/6.png",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"images",
+								"6.png"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "protected",
+			"item": [
+				{
+					"name": "getuser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/user/getuser",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"getuser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:5060",
+			"type": "string"
+		},
+		{
+			"key": "CookieRefreshToken",
+			"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjM4MjMsImV4cCI6MTczNjAxNTgyM30.YQy3KLMA5EP9Kq4VzxxAGiACgbk-iVLeeyXi4YSU8-k; Path=/; Expires=Sat, 04 Jan 2025 18:37:04 GMT; HttpOnly",
+			"type": "string"
+		},
+		{
+			"key": "CookieAccessToken",
+			"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUxZWViZjk5NGUwYzMyY2YyMGQzZmEiLCJmaXJzdF9uYW1lIjoiYmlwaW4iLCJsYXN0X25hbWUiOiJjIiwiZW1haWwiOiJic2MwNTgwQGdtYWlsLmNvbSIsInZlcmlmaWVkIjpmYWxzZSwiYWN0aXZhdGlvbkxpbmsiOiJhN2Y2OGI5Yy1mNDI0LTRlOGItOTJmMS02M2ZkYWQ4MGIwY2IiLCJpYXQiOjE3MzM0MjM4MjMsImV4cCI6MTczMzQyNjgyM30.xc_i3PjZVvZw3uavP_30Kh-kcx7Vqrh_sJK9axpvAwg; Path=/; Expires=Thu, 05 Dec 2024 19:27:04 GMT; HttpOnly",
+			"type": "string"
+		}
+	]
+}

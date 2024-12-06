@@ -125,7 +125,7 @@ class AuthController{
         try {
             const link = req.params.link;
             const { newpassword, confirmpassword } = req.body
-            console.log({ newpassword, confirmpassword })
+            // console.log({ newpassword, confirmpassword })
             if (!link) {
                 throw ApiError.BadRequest("Invalid or missing password reset link.");
             }

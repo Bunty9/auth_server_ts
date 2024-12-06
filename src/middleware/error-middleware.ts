@@ -7,7 +7,7 @@ export default function errorMiddleware(
     res: Response,
     next: NextFunction
 ): Response | void {
-    console.error(err);
+    // console.error(err);
 
     if (err instanceof ApiError) {
         return res.status(err.status).json({
@@ -16,5 +16,5 @@ export default function errorMiddleware(
         });
     }
 
-    return res.status(500).json({ message: "Internal Server Error" });
+    return res.status(500).json({ message: "Internal Server Error. Middleware error",err });
 }

@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 5000
 //routes
 import publicRouter from './src/router/public-routes';
 import authRouter from './src/router/auth-routes';
+import userRouter from './src/router/user-routes';
 
 
 const app = express();
@@ -17,15 +18,22 @@ app.use(cookieParser());
 app.use(express.json());
 
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true
-}));
-
+// app.use(cors({
+//     origin: 'http://localhost:3000',
+//     credentials: true
+// }));
+app.use(
+    cors({
+        origin: "*", // Allow all origins (for development only, restrict in production)
+        methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
+        allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    })
+);
 
 //routes
 app.use('/api/public',publicRouter)
 app.use('/api/auth',authRouter)
+app.use('/api/user',userRouter)
 //start server
 
 const startServer = async () => {

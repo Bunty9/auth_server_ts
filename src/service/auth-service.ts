@@ -50,7 +50,7 @@ class AuthService {
         //send activation link to user
         await mailService.sendActivationMail(
             email,
-            `${process.env.API_URL}/api/activate/${activation_link}`
+            `${process.env.SERVER_API_URL}/api/auth/verify?link=${activation_link}`
         )
         // pasrse new user in dto
         const userDto = new UserDto({
@@ -95,6 +95,7 @@ class AuthService {
         const token = await tokenService.removeToken(refreshToken)
         return token
     }
+
     async verify(activationLink: any) {
         const user = await UserModel.findOne({activationLink})
         if(!user){
@@ -102,14 +103,37 @@ class AuthService {
         }
         user.verified = true;
         await user.save();
+        return
+    }
+
+    async sendverify(userid: string | ObjectId) {
+        const user = await UserModel.findById(userid)
+        if (!user)
+        {
+            throw ApiError.BadRequest('The user does not exist')
+        }
+        if (user.verified) {
+                throw ApiError.BadRequest(`User Already Verified`)
+        }
+        const activation_link = uuidv4() //activationlink uid
+        user.activation_link = activation_link
+        await user.save()
+        //send activation link to user
+        await mailService.sendActivationMail(
+            user.email,
+            `${process.env.SERVER_API_URL}/api/auth/verify?link=${activation_link}`
+        )
+        return
     }
 
     async refresh(refreshToken: any) {
         if (!refreshToken) {
-            throw ApiError.UnauthorizedError(`Invalid Refresh Token.`);
+            throw ApiError.UnauthorizedError(`Refresh Token not found.`);
         }
         const userData = tokenService.validateRefreshToken(refreshToken);
         const tokenFromDb = await tokenService.findToken(refreshToken);
+        // console.log(userData)
+        // console.log(tokenFromDb)
         if (!userData || !tokenFromDb) {
             throw ApiError.UnauthorizedError(`Invalid Refresh Token.`);
         }

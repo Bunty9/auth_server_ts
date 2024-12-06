@@ -5,7 +5,7 @@ import { Document, ObjectId } from "mongoose";
 interface TokenPayload {
     _id: string | ObjectId;
     email: string;
-    [key: string]: any; // Allow additional properties if needed
+    verified: boolean;
 }
 
 interface Tokens {
@@ -37,8 +37,8 @@ class TokenService {
         }
     }
     validateRefreshToken(refreshToken: string): UserJwtPayload | null {
-        try{
-            const userData = jwt.verify(refreshToken, process.env.JWT_ACCESS_SECRET as string) as UserJwtPayload;
+        try {
+            const userData = jwt.verify(refreshToken, process.env.JWT_REFRESH_SECRET as string) as UserJwtPayload;
             return userData;
         } catch(e){
             return null;

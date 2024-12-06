@@ -6,6 +6,8 @@ import mailService from "./mail-service";
 import { UserDto } from "../dtos/user-dto";
 import tokenService from "./token-service";
 import { ObjectId } from "mongoose";
+import { ResetTokenModel } from "../models/resettoken-model";
+import { TokenModel } from "../models/token-model";
 
 
 
@@ -124,6 +126,43 @@ class AuthService {
             `${process.env.SERVER_API_URL}/api/auth/verify?link=${activation_link}`
         )
         return
+    }
+    async sendresetpassword(email: string) {
+
+        const user = await UserModel.findOne({email})
+        if (!user)
+        {
+            throw ApiError.BadRequest('The user does not exist')
+        }
+        const resetToken = uuidv4() //activationlink uid
+        const token = await tokenService.saveResetToken(user._id as string, resetToken)
+        
+        await mailService.sendPasswordResetMail(
+            user.email,
+            `${process.env.SERVER_API_URL}/api/auth/resetpassword/${resetToken}`
+        )
+        return {token}
+    }
+
+    async resetpassword(userid: string | ObjectId) {
+
+    }
+    async changepassword(link: string, password:string) {
+        const token = await ResetTokenModel.findOne({resetToken:link})
+        if (!token)
+        {
+            throw ApiError.BadRequest('Invalid Reset Token')
+        }
+        const user = await UserModel.findOne({ _id: token.user })
+        if (!user) {
+            throw ApiError.BadRequest('Invalid Reset Token')
+        }
+        const hashedpassword = await bcrypt.hash(password, 10)
+        user.password = hashedpassword
+        const updateduser = await user.save()
+        const deleteToken = await ResetTokenModel.deleteOne({resetToken:link})
+        const logout = await TokenModel.deleteOne({user:user._id})
+        return {...updateduser, deleteToken,logout}
     }
 
     async refresh(refreshToken: any) {

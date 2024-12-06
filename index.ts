@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000
 import publicRouter from './src/router/public-routes';
 import authRouter from './src/router/auth-routes';
 import userRouter from './src/router/user-routes';
+import path from 'path';
 
 
 const app = express();
@@ -17,7 +18,7 @@ app.use(cookieParser());
 
 app.use(express.json());
 
-
+app.use(express.urlencoded({ extended: true }));
 // app.use(cors({
 //     origin: 'http://localhost:3000',
 //     credentials: true
@@ -29,6 +30,8 @@ app.use(
         allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     })
 );
+
+app.use('/images', express.static(path.join(__dirname, './src/templates/images')));
 
 //routes
 app.use('/api/public',publicRouter)

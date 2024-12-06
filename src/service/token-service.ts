@@ -1,6 +1,8 @@
 import jwt, { JwtPayload } from "jsonwebtoken";
 import { TokenModel } from "../models/token-model";
 import { Document, ObjectId } from "mongoose";
+import { ApiError } from "../exceptions/api-error";
+import { ResetTokenModel } from "../models/resettoken-model";
 
 interface TokenPayload {
     _id: string | ObjectId;
@@ -45,12 +47,21 @@ class TokenService {
         }
     }
     async saveToken(userId: string | ObjectId, refreshToken: string): Promise<Document | null> {
-        const tokenData = await TokenModel.findOne({user: userId})
+        const tokenData = await TokenModel.findOne({ user: userId })
         if(tokenData){
             tokenData.refreshToken = refreshToken;
             return tokenData.save();
         }
         const token = await TokenModel.create({user: userId, refreshToken})
+        return token;
+    }
+    async saveResetToken(userId: string | ObjectId, resetToken: string): Promise<Document | null> {
+        const tokenData = await ResetTokenModel.findOne({ user: userId })
+        if(tokenData){
+            tokenData.resetToken = resetToken;
+            return tokenData.save();
+        }
+        const token = await ResetTokenModel.create({user: userId, resetToken})
         return token;
     }
     async removeToken(refreshToken: string) {
@@ -61,6 +72,7 @@ class TokenService {
         const tokenData = await TokenModel.findOne({refreshToken})
         return tokenData;
     }
+    
 }
 
 export default new TokenService()

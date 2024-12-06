@@ -15,6 +15,9 @@ authRouter.post("/login", authController.login);
 authRouter.get("/refresh", authController.refresh);
 authRouter.post("/logout", authController.logout);
 authRouter.get("/verify", authController.verify);
+authRouter.get("/resetpassword/:link", authController.resetpassword);
+authRouter.post("/changepassword/:link", authController.changepassword);
+authRouter.post("/forgotpassword", authController.forgotpassword);
 authRouter.get("/sendlink",authMiddleware,authController.sendlink)
 
 export default authRouter;

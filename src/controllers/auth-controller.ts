@@ -4,6 +4,8 @@ import authService from "../service/auth-service";
 import { ApiError } from "../exceptions/api-error";
 import { loginValidation, signupValidation } from "../validators/auth-validator";
 import { AuthenticatedRequest } from "../middleware/auth-middleware";
+import path from "path";
+import * as fs from "fs";
 
 
   
@@ -84,6 +86,57 @@ class AuthController{
             const activationLink = req.params.link;
             await authService.verify(activationLink);
             return res.status(200).json({message: 'Verification Successsful. You may leave this page now.'})
+        } catch (error) {
+            next(error)
+        }
+    }
+    async forgotpassword(req: Request, res: Response, next: NextFunction): Promise<any>{
+        try {
+            const email = req.body.email
+            if (!email) {
+                throw ApiError.BadRequest("Missing Email.");
+            }
+            await authService.sendresetpassword(email);
+            return res.status(200).json({message: 'An email with the link to change your password has been sent.'})
+        } catch (error) {
+            next(error)
+        }
+    }
+    async resetpassword(req: Request, res: Response, next: NextFunction): Promise<any>{
+        try {
+            const link = req.params.link;
+
+            if (!link) {
+                throw ApiError.BadRequest("Invalid or missing password reset link.");
+            }
+            const filepath = path.resolve(__dirname, '../templates/reset-password/index.html')
+            let htmlContent = fs.readFileSync(filepath, "utf8")
+            const updatedHtml = htmlContent.replace(
+                "{{mySubmitEndpoint}}",
+                `/api/auth/changepassword/${encodeURIComponent(link as string)}`
+            );
+
+            return res.status(200).send(updatedHtml);
+        } catch (error) {
+            next(error)
+        }
+    }
+    async changepassword(req: Request, res: Response, next: NextFunction): Promise<any>{
+        try {
+            const link = req.params.link;
+            const { newpassword, confirmpassword } = req.body
+            console.log({ newpassword, confirmpassword })
+            if (!link) {
+                throw ApiError.BadRequest("Invalid or missing password reset link.");
+            }
+            if (!newpassword || !confirmpassword) {
+                throw ApiError.BadRequest("Missing password Fields.");
+            }
+            if (newpassword !== confirmpassword) {
+                throw ApiError.BadRequest("Passwords do not Match.");
+            }
+            const changed = await authService.changepassword(link, newpassword)
+            return res.status(200).json({message: 'Password changed successfully',changed});
         } catch (error) {
             next(error)
         }

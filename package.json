@@ -5,9 +5,12 @@
   "author": "Bunty9",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node index.ts",
-    "build": "tsc -p .",
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "start": "npm run build && npm run serve",
+    "serve": "node -r dotenv/config build/server.js",
+    "build": "npm run clean && npm run build-ts",
+    "clean": "rimraf ./build",
+    "build-ts": "tsc"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",

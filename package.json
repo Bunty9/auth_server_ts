@@ -5,6 +5,8 @@
   "author": "Bunty9",
   "license": "MIT",
   "scripts": {
+    "start": "ts-node index.ts",
+    "build": "tsc -p .",
     "dev": "nodemon index.ts"
   },
   "devDependencies": {

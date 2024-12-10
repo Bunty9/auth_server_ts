@@ -4,13 +4,18 @@
   "main": "index.ts",
   "author": "Bunty9",
   "license": "MIT",
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "outDir": "dist"
+  },
   "scripts": {
     "dev": "nodemon index.ts",
-    "start": "npm run build && npm run serve",
-    "serve": "node -r dotenv/config build/server.js",
-    "build": "npm run clean && npm run build-ts",
-    "clean": "rimraf ./build",
-    "build-ts": "tsc",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
     "pm2": "NODE_ENV=production pm2 start index.ts --watch"
   },
   "devDependencies": {

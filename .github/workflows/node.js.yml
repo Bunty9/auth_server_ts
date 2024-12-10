@@ -11,7 +11,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       matrix:
@@ -26,7 +26,17 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: |
-        touch .env
-        echo ${{ secrets.PROD_ENV_FILE }} > .env
+      env:
+        PORT: ${{secrets.PORT}}
+        DB_URL: ${{secrets.DB_URL}}
+        JWT_ACCESS_SECRET: ${{secrets.JWT_ACCESS_SECRET}}
+        JWT_REFRESH_SECRET: ${{secrets.JWT_REFRESH_SECRET}}
+        MAIL_SERVICE: ${{secrets.MAIL_SERVICE}}
+        SMTP_HOST: ${{secrets.SMTP_HOST}}
+        SMTP_PORT: ${{secrets.SMTP_PORT}}
+        SMTP_USER: ${{secrets.SMTP_USER}}
+        SMTP_PASSWORD: ${{secrets.SMTP_PASSWORD}}
+        SERVER_API_URL: ${{secrets.SERVER_API_URL}}
+      
+    
 

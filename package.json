@@ -10,7 +10,8 @@
     "serve": "node -r dotenv/config build/server.js",
     "build": "npm run clean && npm run build-ts",
     "clean": "rimraf ./build",
-    "build-ts": "tsc"
+    "build-ts": "tsc",
+    "pm2": "NODE_ENV=production pm2 start server.ts --watch"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
